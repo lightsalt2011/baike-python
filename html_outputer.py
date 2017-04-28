@@ -1,7 +1,7 @@
+# -*- coding: utf-8 -*-
 """
 Html输出器
 """
-
 
 class HtmlOutputer(object):
     def __init__(self):
@@ -28,8 +28,10 @@ class HtmlOutputer(object):
         file_out.writelines(['</head>\n', '<body class="g-wrap">\n'])
         for data in self.datas:
             file_out.writelines('<div class="g-info">\n')
-            file_out.writelines(
-                '<p class="m-tt"><a target="_blank" href="%s">%s</a></p>\n' % (data['url'], data['title']))
-            file_out.writelines(['<p class="summary">%s</p>\n' % data['summary'], '</div>\n'])
+           # file_out.writelines('<p class="m-tt"><a target="_blank" href="%s">%s</a></p>\n' %(("").join(data['url']), ("").join(data['title'])))
+           # file_out.writelines('<p class="m-tt"><a target="_blank" href="%s">%s</a></p>\n'  %((str(line) for line in data['url']), (str(line) for line in data['title'])))
+            file_out.writelines(['<p class="summary">%s</p>\n' %(str(line) for line in data['summary']), '</div>\n'])
+            #file_out.writelines(['<p class="summary">%s</p>\n' %data['summary'], '</div>\n'])
+            #print "*****", data['url'], data['title'],data['summary'], "XXXXX"
         file_out.writelines(['</body>\n', '</html>'])
         file_out.close()

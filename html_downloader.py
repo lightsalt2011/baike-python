@@ -1,4 +1,5 @@
-import urllib.request
+# -*- coding: utf-8 -*-
+import urllib
 
 """
 Html下载器
@@ -16,7 +17,7 @@ class HtmlDownloader(object):
         if url is None:
             return None
         # 打开一个url,返回一个 http.client.HTTPResponse
-        response = urllib.request.urlopen(url)
+        response = urllib.urlopen(url)
         # 若请求失败
         if response.getcode() != 200:
             return None

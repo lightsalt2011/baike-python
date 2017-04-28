@@ -1,5 +1,7 @@
+# -*- coding: utf-8 -*-
 import re
-import urllib.parse
+import urllib
+import urlparse
 
 from bs4 import BeautifulSoup
 
@@ -34,7 +36,7 @@ class HtmlParser(object):
         for link in links:
             new_url = link['href']
             # 将相对路径的url拼接成绝对路径的url
-            new_full_url = urllib.parse.urljoin(page_url, new_url)
+            new_full_url = urlparse.urljoin(page_url, new_url)
             new_urls.add(new_full_url)
         return new_urls
 

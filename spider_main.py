@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import html_downloader
 import html_outputer
 import html_parser
@@ -42,7 +43,7 @@ class SpiderMain(object):
                 # 收集数据
                 self.outputer.collect_data(new_data)
                 # 爬取目标定为爬取20个url，若完成任务，则退出循环
-                if cnt == 20:
+                if cnt == 5:
                     break
                 cnt += 1
             except:
